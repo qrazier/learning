@@ -20,22 +20,21 @@ func main() {
         fmt.Print(err)
     }
 
-    fmt.Println(b) // print the content as 'bytes'
+    //fmt.Println(b) // print the content as 'bytes'
 
     str := string(b) // convert content to a 'string'
 
     fmt.Println(str) // print the content as a 'string'
 
-    str2 := binary(str)
+    str2 := binary(str) // convert the string into binary number,char by char.
 
-    fmt.Println(str2)
-fmt.Printf("%s\n", binary(str))
+    fmt.Println(str2) // print the content as a 'string'
 
-    file, err := os.Create("abc.bin")
+    file, err := os.Create("abc.bin") // create a bin file
     if err != nil {
         return
     }
     defer file.Close()
 
-    file.WriteString(str2)
+    file.WriteString(str2) // write the string binary into bin file.
 }
