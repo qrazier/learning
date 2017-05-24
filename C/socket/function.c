@@ -1,8 +1,3 @@
-/* echo-client-udp.c */
-
-/* Simple UDP echo client - tries to send everything read from stdin
-   as a single datagram (MAX 1MB)*/
-
 #include <stdio.h>      /* standard C i/o facilities */
 #include <stdlib.h>     /* needed for atoi() */
 #include <unistd.h>     /* defines STDIN_FILENO, system calls,etc */
@@ -12,10 +7,6 @@
 #include <arpa/inet.h>  /* IP address conversion stuff */
 #include <netdb.h>      /* gethostbyname */
 #include <string.h>
-
-/* get_stdin reads from standard input until EOF is found,
-   or the maximum bytes have been read.
-*/
 
 int get_stdin( char *buf, int maxlen ) {
   int i=0;
@@ -34,14 +25,6 @@ int get_stdin( char *buf, int maxlen ) {
   /* return the number of bytes read including the last read */
   return(i);
 }
-
-
-/* client program:
-
-   The following must passed in on the command line:
-      hostname of the server (argv[1])
-      port number of the server (argv[2])
-*/
 
 #define MAXBUF 10*1024
 
